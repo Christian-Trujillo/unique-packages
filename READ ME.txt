@@ -1,0 +1,8 @@
+Package Builder is very simple!
+ you have 2 options:
+
+ select your sku list excel sheet and your template
+or
+ just click submit, and the program will automatically use the 2 files that are in the sku list and template folder. 
+
+I recommend this option ^^^
