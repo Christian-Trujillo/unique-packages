@@ -6,7 +6,7 @@ import os
 from datetime import date
 import json
 import win32gui, win32con
-# import descriptions as de
+import descriptions as de
 
 ### hides console window ###
 # hide = win32gui.GetForegroundWindow()
@@ -95,8 +95,8 @@ while True:
     #close window
     if event == gui.WIN_CLOSED:
         break
-    # elif event == "Update Descriptions":
-    #     de.write_json()
+    elif event == "Update Descriptions":
+        de.write_json()
     #run builder by clicking submit
     elif event == 'Submit':
         if values['file1']=='':
@@ -204,7 +204,7 @@ while True:
                         print(f'packages built: {n}', end="\r")
                         window['pckg'].update(value=str(n))
                         window.refresh()
-        # item_desc = de.read_json()
+        item_desc = de.read_json()
         for i in range(len (packages))  :
             serial = ''
             for j in range(len(packages[i])) :
@@ -213,7 +213,7 @@ while True:
                     serial+=packages[i][j].sku         
                 except: pass
             packages_wksht.cell(i+2,10).value=serial
-            # de.write_descriptions(i+2,wkbk, item_desc)
+            de.write_descriptions(i+2,wkbk, item_desc)
             # packages_wksht.cell(i+2,10).value= str("hello")
         # with open(os.getcwd()+ r"\package variables.json",'r+') as f:   #save packages list to JSON
             #     data=json.load(f)
